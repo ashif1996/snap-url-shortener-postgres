@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/" style="color: #007bff;"><i class="fa fa-home" style="margin-right: 5px; color: #007bff;"></i>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">shortened Url</li>
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 style="font-weight: bolder;">Shortened URL</h2>
+                <div class="custom-line"></div>
+            </div>
+        </div>
+    
+        <% if (locals.shortenedUrl) { %>
+            <div class="result-box text-center mt-5">
+                <div class="url-box">
+                    <h3>Here is your shortened URL:</h3>
+                    <input type="text" id="shortenedUrl" class="form-control mb-3" value="<%= locals.shortenedUrl %>" readonly>
+                    <button id="copyButton" class="btn btn-primary">Copy URL</button>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="result-box text-center mt-5">
+                <div class="url-box">
+                    <h3>Error: No shortened URL found!</h3>
+                    <p>The URL you are looking for could not be found. Please try generating a new URL.</p>
+                    <a href="/" class="btn btn-primary">Go Back to Home</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<script src="/js/result.js"></script>
